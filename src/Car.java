@@ -1,7 +1,12 @@
 
 public class Car {
-	String color = "red";
-	int speed = 80, gear = 2;
+	//public String color = "red"; // private로 선언하면 SportsCar에서 접근 못함(자식 클래스니까.)
+	private String color = "red";
+	public int speed = 80, gear = 2;
+	
+	public void setColor(String color) {
+		this.color = color;
+	}
 	
 	// 가속
 	public void speedUP() { // 최대 속도 300km/h
