@@ -5,10 +5,10 @@ public class Television {
 	private boolean onOff;
 	
 	public Television() { // 생성자 오버로딩. 
-		this(1,1,false); // 자기 함수를 다시 호출. 
+		this(1,1,false); // 자기 함수를 다시 호출. 코드가 한 곳으로 연결된다. => 생성자 오버로딩.
 		//channel = 1; // 값 지정이 오버로딩에서 여러 번 들어가면? 형식상 어긋난 것임
-		//volume = 1;
-		//onOff = false;
+		//volume = 1; // 생성자가 처리하는 곳이.. 만약 변수가 10개면, 20개면? 코드가 한 번 바뀌면 다 바꿔줘야 함.
+		//onOff = false; // 만약 이 코드대로.. 한 기능을 바꿔주려면 여러 함수에서 수정해줘야 함.
 	}
 	
 	public Television(int c) {
@@ -22,12 +22,14 @@ public class Television {
 	
 	// 생성자 추가. int c, int v, boolean o)
 	public Television(int c, int v, boolean o) { // 생성자 오버로딩을 하면 결국 매개변수 가장 많은 한 쪽으로 모이기 때문에 한 곳에서 처리를 하게 됨.
-		this.channel = c;
+		this.channel = c; // this: 자기자신. 좀 더 명확한 표현이다.
 		this.volume = v;
 		onOff = o;
 	}
 	
-	
+	static void show() { // 정적 멤버.
+		System.out.println("Hello TV");
+	}
 
 	void print() {
 		System.out.println("텔레비전의 채널은 " + channel + "이고 볼륨은 " + volume + "입니다.");

@@ -10,14 +10,17 @@ public class TelevisionTest {
 		//tv1.setChannel(15); // 3 나와야 함.
 		//tv1.volume = 10;
 		//tv1.onOff = true;
+		
 		tv1.print();
+		//Television.print();
+		
 		//System.out.println("텔레비전의 채널은 " + tv1.channel + "이고 볼륨은 " + tv1.volume + "입니다.");
 		
 		System.out.println(tv1); // tv1가 갖고있는 클래스 아이디?가 출력 됨.
 								// public ... 수정 후 실행하면 오버라이드?로 문장이 출력됨.
 		
 		
-		Television tv2 = new Television();
+		Television tv2 = new Television(); // 값을 넣지 않았을 때. 설정하지 않은 건 기본값대로 하게끔 오버로딩 진행.
 		//tv2 = tv1;
 		//tv2.channel = 6;
 		//tv2.setChannel(6); // 값을 직접 바꾸는 게 아닌, 함수를 통해 수정.
@@ -25,9 +28,12 @@ public class TelevisionTest {
 		//tv2.volume = 12; // tv2 = tv1라고 했으면 값이 아니라 위치를 가리켰기 때문에 tv1도 바뀐 것처럼 나올 것임.
 						// tv1과 관련 없이 만드려면 새로운 객체로 만들어줘야 함.
 		//System.out.println("텔레비전의 채널은 " + tv2.channel + "이고 볼륨은 " + tv2.volume + "입니다.");
+		
 		tv2.print();
 		
-		
+		tv1.show(); // tv2로 해도 똑같이 나옴. 정적 멤버는 한 개이니까.
+					// 그럼 객체 없어도 되지 않는가.
+		Television.show(); // 이렇게 써도 위와 똑같이 출력이 됨.
 	}
 
 }
